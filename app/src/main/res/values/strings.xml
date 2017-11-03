@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">GitLearn</string>
+    <string-array name = "cities">
+        <item>בחר עיר</item>
+        <item>גבעתיים</item>
+        <item>תל-אביב</item>
+    </string-array>
+
+
 </resources>
