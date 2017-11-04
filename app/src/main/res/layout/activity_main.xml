@@ -26,4 +26,12 @@
         android:layout_height="100px"
         tools:layout_editor_absoluteX="105dp"
         tools:layout_editor_absoluteY="235dp" />
+
+    <Spinner
+        android:id="@+id/Court"
+        android:layout_width="700px"
+        android:layout_height="100px"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="279dp" />
+
 </android.support.constraint.ConstraintLayout>
