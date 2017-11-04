@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name = "givataim">
+        <item>בחר מגרש</item>
+        <item>בורוכוב</item>
+        <item>קלעי</item>
+        <item>שב"צ</item>
+    </string-array>
+    <string-array name = "telaviv">
+        <item>בחר מגרש</item>
+        <item>לך</item>
+        <item>דחוף</item>
+        <item>אבצע</item>
+    </string-array>
+    <string-array name = "empty">
+    </string-array>
+</resources>
