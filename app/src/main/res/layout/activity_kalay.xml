@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.tomer.gitlearn.Kalay">
 
+    <TextView
+        android:id="@+id/Av"
+        android:layout_width="119dp"
+        android:layout_height="81dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="251dp" />
 </android.support.constraint.ConstraintLayout>
