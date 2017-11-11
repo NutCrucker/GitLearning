@@ -5,15 +5,24 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.io.IOException;
+import java.util.concurrent.ExecutionException;
 
 public class Kalay extends AppCompatActivity {
     TextView A;
     Courts C = new Courts();
+    String M;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kalay);
         A = (TextView)findViewById(R.id.Av);
-        A.setText((CharSequence) C.execute("kalay"));
+        try {
+            M = C.execute("kalay").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        A.setText(M);
         }
 }

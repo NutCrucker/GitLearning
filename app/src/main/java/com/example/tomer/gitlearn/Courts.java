@@ -1,7 +1,7 @@
 package com.example.tomer.gitlearn;
 
 import android.os.AsyncTask;
-import android.os.NetworkOnMainThreadException;
+import android.widget.TextView;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -15,10 +15,12 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 
-public class Courts extends AsyncTask<Object, Object, String> {
+public class Courts extends AsyncTask<String, String, String> {
+    String Result;
+
     @Override
-    protected String doInBackground(Object... params) {
-        String name = params[0].toString();
+    protected String doInBackground(String... params) {
+        String name = params[0];
         try {
             String check_url = "http://10.0.2.2/login.php";
             URL url = new URL(check_url);
@@ -43,13 +45,15 @@ public class Courts extends AsyncTask<Object, Object, String> {
             C.close();
             IPS.close();
             Check.disconnect();
-            return result;
+            this.Result = result;
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return Result;
     }
 
+
 }
+
