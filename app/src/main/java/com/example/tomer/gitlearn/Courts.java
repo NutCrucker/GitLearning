@@ -22,7 +22,7 @@ public class Courts extends AsyncTask<String, String, String> {
     protected String doInBackground(String... params) {
         String name = params[0];
         try {
-            String check_url = "http://10.0.2.2/login.php";
+            String check_url = "https://isitav.000webhostapp.com/login.php";
             URL url = new URL(check_url);
             HttpURLConnection Check = (HttpURLConnection) url.openConnection();
             Check.setRequestMethod("POST");

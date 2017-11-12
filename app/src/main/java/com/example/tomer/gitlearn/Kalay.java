@@ -17,12 +17,13 @@ public class Kalay extends AppCompatActivity {
         setContentView(R.layout.activity_kalay);
         A = (TextView)findViewById(R.id.Av);
         try {
-            M = C.execute("kalay").get();
+            String M = C.execute("kalay").get();
+            this.M = M;
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
         A.setText(M);
-        }
+    }
 }
