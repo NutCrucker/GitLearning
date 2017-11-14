@@ -1,7 +1,7 @@
 package com.example.tomer.gitlearn;
 
 import android.os.AsyncTask;
-import android.widget.TextView;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -14,8 +14,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
+/**
+ * Created by Tomer on 14/11/2017.
+ */
 
-public class Courts extends AsyncTask<String, String, String> {
+public class CourtNum extends AsyncTask<String, String, String> {
     String Result;
 
     @Override
@@ -43,6 +46,7 @@ public class Courts extends AsyncTask<String, String, String> {
                 result = result + line;
             }
             C.close();
+            IPS.close();
             Check.disconnect();
             this.Result = result;
         } catch (MalformedURLException e) {
@@ -53,6 +57,4 @@ public class Courts extends AsyncTask<String, String, String> {
         return Result;
     }
 
-
 }
-
