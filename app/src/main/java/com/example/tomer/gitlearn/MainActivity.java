@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     Context context;
     Actions Act = new Actions();
     Spinner City,Court;
+    Court[] Helo = new Court[3];
+    Boolean X;
     ArrayAdapter<CharSequence> Cities,Courts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,30 +36,39 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         String Choice = parent.getItemAtPosition(pos).toString();
-        switch(Choice){
-            case "גבעתיים":
-                Courts = ArrayAdapter.createFromResource(this,R.array.givataim,android.R.layout.simple_spinner_item);
-                Courts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                Court.setAdapter(Courts);
-                break;
-            case "תל-אביב":
-                Courts = ArrayAdapter.createFromResource(this,R.array.telaviv,android.R.layout.simple_spinner_item);
-                Courts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                Court.setAdapter(Courts);
-                break;
-            case "בחר עיר":
-                Courts = ArrayAdapter.createFromResource(this,R.array.empty,android.R.layout.simple_spinner_item);
-                Courts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                Court.setAdapter(Courts);
-                break;
-            case "קלעי":
-                startActivity(new Intent(getApplicationContext(),Kalay.class));
-                MainActivity.this.finish();
-                break;
+        if (Choice.equals("גבעתיים")) {
+            X = false;
+            Courts = ArrayAdapter.createFromResource(this, R.array.givataim, android.R.layout.simple_spinner_item);
+            Courts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            Court.setAdapter(Courts);
         }
+        else if(Choice.equals("תל-אביב")){
+            X = false;
+        Courts = ArrayAdapter.createFromResource(this, R.array.telaviv, android.R.layout.simple_spinner_item);
+        Courts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Court.setAdapter(Courts);
+        }
+        else if(Choice.equals("בחר עיר")){
+            X = false;
+            Courts = ArrayAdapter.createFromResource(this, R.array.empty, android.R.layout.simple_spinner_item);
+            Courts.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            Court.setAdapter(Courts);
+        }
+        else if(X){
+            Intent I = new Intent(getApplicationContext(), Kalay.class);
+            for (int i = 0; i < Helo.length; i++) {
+                if (Choice.equals(Helo[i].getNAMEHEB())) {
+                    I.putExtra("name", Helo[i].getNAMEENG());
+                    I.putExtra("title", Helo[i].getNAMEHEB());
+                }
+            }
+            startActivity(I);
+            MainActivity.this.finish();
+        }
+        else X=true;
     }
     public void onNothingSelected(AdapterView<?> parent) {
-
+        Intent I;
     }
     public void SetUIView(){
         Head=(TextView) findViewById(R.id.Head);
@@ -72,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Court=(Spinner) findViewById(R.id.Court);
         Court.setX(Act.getWidth(context)/2 - 350);
         Court.setY(City.getY()+200);
+        Helo[0]= new Court("בורוכוב", "borochov");
+        Helo[1]= new Court("קלעי", "kalay");
+        Helo[2]= new Court("שבצ", "shavatz");
     }
 
 

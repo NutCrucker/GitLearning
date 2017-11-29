@@ -8,18 +8,48 @@
 
     <TextView
         android:id="@+id/Av"
-        android:layout_width="119dp"
-        android:layout_height="81dp"
+        android:layout_width="500px"
+        android:layout_height="200px"
         android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="18sp"
         tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="251dp" />
+        tools:layout_editor_absoluteY="252dp" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+        android:id="@+id/cange"
+        android:layout_width="500px"
+        android:layout_height="150px"
+        android:layout_weight="1"
         android:onClick="Change"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="137dp" />
+        android:text="שנה סטאטוס"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="595dp" />
+
+    <Button
+        android:id="@+id/main"
+        android:layout_width="500px"
+        android:layout_height="150px"
+        android:layout_weight="1"
+        android:onClick="toMain"
+        android:text="לתפריט הראשי" />
+
+    <ImageView
+        android:id="@+id/button"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        app:srcCompat="@mipmap/caughtbt"
+        tools:layout_editor_absoluteX="107dp"
+        tools:layout_editor_absoluteY="88dp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="700px"
+        android:layout_height="300px"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="465dp" />
+
 </android.support.constraint.ConstraintLayout>
